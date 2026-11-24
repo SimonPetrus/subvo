@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subvo Privacy Policy</title><style>:root{--bg:#faf6fb;--fg:#1c1426;--sub:#5f5468;--acc:#8a1f86;--line:#e3d6ea;--card:#ffffff}
+@media (prefers-color-scheme:dark){:root{--bg:#17111d;--fg:#f4eef8;--sub:#b9adc4;--acc:#e58be0;--line:#3a2d46;--card:#221829;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:720px;margin:0 auto;padding:32px 20px 64px}h1{font-size:28px;line-height:1.25;margin:0 0 8px}
+p,li{overflow-wrap:anywhere}ul{padding-left:22px}li{margin:8px 0}a{color:var(--acc)}
+nav{font-size:15px;margin-bottom:28px;color:var(--sub)}nav a{margin-right:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0}
+.sub{color:var(--sub)}footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--sub)}</style></head><body><main>
+<nav><a href="../en/">Subvo</a><a href="../privacy/">Privacy</a><a href="../gizlilik/">Gizlilik (Türkçe)</a></nav>
+<h1>Subvo Privacy Policy</h1>
+<p>Effective date: 24 November 2026</p>
+<p>Subvo is a free, open-source (AGPL-3.0) iPhone app. Contact: <a href="mailto:subvo2026@gmail.com">subvo2026@gmail.com</a>.</p>
+<p><strong>In short.</strong> Subvo has no servers of its own. No data is sent to the developer. There is no advertising, analytics or tracking code.</p>
+<p><strong>What stays on your phone</strong></p>
+<ul>
+<li>The game picture received from the console is processed in memory only to read subtitles; the text is read on the phone, on the device (Apple Vision). The picture is not stored or uploaded.</li>
+<li>Secrets and where they are kept: your PlayStation sign-in data, the console pairing key and (if you entered them) your DeepL and Gemini keys are kept in the phone's Keychain. The keys and certificates created for TV setup (Samsung install certificate, LG key, the adb key for Android TV) are kept in the app's own folder, excluded from backups; the adb identity used for Android TV is also added to the Keychain. The TV record (address and name) is kept in the app settings.</li>
+<li>Deleting from inside the app: on the Devices screen, "Change the PlayStation account" removes the PlayStation sign-in and the paired console, "Forget this console" removes only the console key, and "Forget the saved TV" removes the TV record and all the setup keys and certificates created for that TV (including the adb identity). You remove DeepL and Gemini keys with "Remove" in their setting. "Reset all settings" clears settings and the translation cache; the account, console and keys stay.</li>
+<li>Deleting the app: everything in the app's own folder (settings, history, TV setup keys and certificates, downloaded packs) is deleted. Keychain items, however, are not always deleted by iOS when an app is deleted: the PlayStation sign-in, the console key, the DeepL and Gemini keys and the adb identity may still be on the phone if you reinstall. To remove them completely, use the deletion steps above before deleting the app.</li>
+<li>Your settings, history and purchase status are kept on the phone.</li>
+</ul>
+<p><strong>Connections to the outside</strong></p>
+<ul>
+<li>Sony: you sign in to your PlayStation account on Sony's own page; Subvo never sees your password. The connection to your console is made only on your home network, to your own console.</li>
+<li>By default, translation uses Apple's on-device translation (iOS 26 and later). The text that was read never leaves the phone. iOS downloads and manages the language packs.</li>
+<li>DeepL or Gemini: only if you choose it and enter your own key, the subtitle text that was read is sent for translation, with your key, directly to that service (DeepL: api.deepl.com or api-free.deepl.com; Gemini: generativelanguage.googleapis.com). No picture, audio or account data is sent. That service's own privacy terms apply. Keys are stored in the phone's Keychain. If you do not choose them, nothing is sent to these services.</li>
+<li>Translation packs: for some games a ready-made translation pack (a data file only) is downloaded or updated automatically from Subvo's own public address (GitHub Pages). As with any internet request, the hosting service (GitHub) can see your IP address and the name of the requested file; your text and account are not sent. The developer keeps no record of these requests; GitHub's own privacy terms apply.</li>
+<li>Home network: only the local network is used to find the console and TV and to install the TV app. The TV app receives subtitles only from the phone, over your home network.</li>
+<li>Installing the TV app: on a Samsung TV you sign in with your Samsung account on Samsung's own page to get an install certificate; the certificate request sends the TV's device ID and your Samsung account email address to Samsung (Samsung's terms apply). On an LG TV, the TV's developer-mode session token is sent to LG's developer site to renew the session. No game data, PlayStation account data or translated text is sent in these connections.</li>
+</ul>
+<p><strong>Report a problem.</strong> A problem recording is kept only when you tap "Start recording" and it stays on the phone. Only if you tap "Send" does it go, by email or the share sheet, to the place you choose. It contains an event log, small frames of the game screen, the text that was read and translated, the device model, and the iOS and app versions; it contains no password, account or key. If you send it by email, your sender email address is visible to the recipient. Recordings are used only to fix the problem and are not shared with third parties. To ask for a recording you sent to be deleted, write to <a href="mailto:subvo2026@gmail.com">subvo2026@gmail.com</a>.</p>
+<p><strong>Purchases.</strong> Voluntary support (subscriptions and one-time purchases) is handled by Apple. Apple processes your payment details; Subvo never sees them. Subvo only uses your purchase status (whether you are a supporter), as reported by Apple, on the phone. Purchases are cosmetic only (badge, themes, app icons).</p>
+<p><strong>Children.</strong> Subvo is not directed at children and does not collect personal data from anyone.</p>
+<p><strong>Retention and deletion.</strong> Because Subvo keeps no data on the developer's side, there is no account or record to delete. Information on the phone can be removed inside the app (changing the account, forgetting the console and TV, removing keys, clearing history); deleting the app may not delete Keychain items (see above). For text sent to third-party services (DeepL, Gemini), those services' rules apply.</p>
+<p><strong>No affiliation.</strong> Subvo is not affiliated with or endorsed by Sony Interactive Entertainment. PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc.</p>
+<p><strong>Changes.</strong> If this policy changes, the new version will be published with a new date.</p>
+<p><strong>Contact.</strong> <a href="mailto:subvo2026@gmail.com">subvo2026@gmail.com</a></p>
+<footer>Subvo is not affiliated with or endorsed by Sony Interactive Entertainment. PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc.</footer>
+</main></body></html>

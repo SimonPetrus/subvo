@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subvo Gizlilik Politikası</title><style>:root{--bg:#faf6fb;--fg:#1c1426;--sub:#5f5468;--acc:#8a1f86;--line:#e3d6ea;--card:#ffffff}
+@media (prefers-color-scheme:dark){:root{--bg:#17111d;--fg:#f4eef8;--sub:#b9adc4;--acc:#e58be0;--line:#3a2d46;--card:#221829;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:720px;margin:0 auto;padding:32px 20px 64px}h1{font-size:28px;line-height:1.25;margin:0 0 8px}
+p,li{overflow-wrap:anywhere}ul{padding-left:22px}li{margin:8px 0}a{color:var(--acc)}
+nav{font-size:15px;margin-bottom:28px;color:var(--sub)}nav a{margin-right:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0}
+.sub{color:var(--sub)}footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--sub)}</style></head><body><main>
+<nav><a href="../">Subvo</a><a href="../gizlilik/">Gizlilik</a><a href="../privacy/">Privacy (English)</a></nav>
+<h1>Subvo Gizlilik Politikası</h1>
+<p>Yürürlük tarihi: 24 Kasım 2026</p>
+<p>Subvo, açık kaynaklı (AGPL-3.0) ve ücretsiz bir iPhone uygulamasıdır. İletişim: <a href="mailto:subvo2026@gmail.com">subvo2026@gmail.com</a>.</p>
+<p><strong>Kısaca.</strong> Subvo'nun kendi sunucusu yoktur. Geliştiriciye hiçbir veri gönderilmez. Reklam, analiz ya da izleme kodu yoktur.</p>
+<p><strong>Telefonda kalanlar</strong></p>
+<ul>
+<li>Konsoldan gelen oyun görüntüsü yalnız altyazıyı okumak için bellekte işlenir; yazı telefonda, cihaz üstünde (Apple Vision) okunur. Görüntü kaydedilmez ve gönderilmez.</li>
+<li>Gizli bilgiler ve nerede durdukları: PlayStation oturum bilgisi, konsol eşleştirme anahtarı ve (girdiysen) DeepL ve Gemini anahtarların telefonun Anahtar Zinciri'nde durur. TV kurulumu için üretilen anahtarlar ve sertifikalar (Samsung kurulum sertifikası, LG anahtarı, Android TV için adb anahtarı) uygulamanın kendi klasöründe, yedeğe girmeyecek biçimde durur; Android TV için kullanılan adb kimliği ayrıca Anahtar Zinciri'ne eklenir. TV adresi ve adı gibi TV kaydı uygulama ayarlarında durur.</li>
+<li>Uygulama içinden silme: Cihazlar ekranında "PlayStation hesabını değiştir" PlayStation oturumunu ve eşleşmiş konsolu, "Bu konsolu unut" yalnız konsol anahtarını, "Kayıtlı TV'yi unut" TV kaydını ve o TV için üretilen bütün kurulum anahtarlarını ve sertifikalarını (adb kimliği dahil) siler. DeepL ve Gemini anahtarlarını ilgili ayarda "Sil" ile silersin. "Tüm ayarları sıfırla" ayarları ve çeviri önbelleğini siler; hesap, konsol ve anahtarlar kalır.</li>
+<li>Uygulamayı silmek: uygulamanın kendi klasöründeki her şey (ayarlar, geçmiş, TV kurulum anahtarları ve sertifikaları, indirilen paketler) silinir. Anahtar Zinciri kayıtları ise iOS tarafından uygulama silinince her zaman silinmeyebilir: PlayStation oturumu, konsol anahtarı, DeepL ve Gemini anahtarları ve adb kimliği yeniden kurduğunda telefonda hâlâ durabilir. Bunları tamamen kaldırmak istiyorsan uygulamayı silmeden önce yukarıdaki silme adımlarını uygula.</li>
+<li>Ayarların, geçmişin ve satın alma durumunun kopyası telefonda durur.</li>
+</ul>
+<p><strong>Dışarıyla kurulan bağlantılar</strong></p>
+<ul>
+<li>Sony: PlayStation hesabına giriş Sony'nin kendi sayfasında yapılır; şifreni Subvo görmez. Konsola bağlantı yalnız ev ağında, kendi konsoluna yapılır.</li>
+<li>Çeviri, varsayılan olarak Apple'ın cihaz içi çevirisiyle yapılır (iOS 26 ve sonrası). Okunan metin telefondan çıkmaz. Dil paketlerini iOS indirir ve yönetir.</li>
+<li>DeepL ya da Gemini: yalnız sen seçer ve kendi anahtarını girersen, okunan altyazı metni çeviri için, senin anahtarınla doğrudan o hizmete gider (DeepL: api.deepl.com veya api-free.deepl.com; Gemini: generativelanguage.googleapis.com). Görüntü, ses ve hesap bilgisi gönderilmez. O hizmetin kendi gizlilik koşulları geçerlidir. Anahtarlar telefonun Anahtar Zinciri'nde saklanır. Seçmezsen bu hizmetlere hiçbir şey gitmez.</li>
+<li>Çeviri paketleri: bazı oyunlar için hazır çeviri paketi (yalnız veri dosyası) Subvo'nun kendi açık adresinden (GitHub Pages) kendiliğinden indirilir ya da güncellenir. İndirme sırasında, her internet isteğinde olduğu gibi, barındırma hizmeti (GitHub) IP adresini ve istenen dosyanın adını görebilir; senin metnin ya da hesabın gönderilmez. Geliştirici bu isteklerin kaydını tutmaz; GitHub'ın kendi gizlilik koşulları geçerlidir.</li>
+<li>Ev ağı: konsolu ve TV'yi bulmak ve TV uygulamasını kurmak için yalnız yerel ağ kullanılır. TV uygulaması altyazıyı yalnız telefondan, ev ağından alır.</li>
+<li>TV uygulamasının kurulumu: Samsung TV'de kurulum sertifikası için Samsung hesabınla Samsung'un kendi giriş sayfasında giriş yaparsın; sertifika isteğiyle Samsung'a TV'nin cihaz kimliği ve Samsung hesabının e-posta adresi gider (Samsung'un koşulları geçerlidir). LG TV'de geliştirici kipi oturumunu yenilemek için LG'nin geliştirici sitesine TV'nin geliştirici kipi oturum anahtarı gider. Bu bağlantılara oyun verin, PlayStation hesabın ya da çeviri metnin gönderilmez.</li>
+</ul>
+<p><strong>Sorun bildir.</strong> Sorun kaydı yalnız sen "Kaydı başlat"a basınca tutulur ve telefonda kalır. Yalnız "Gönder"e basarsan e-posta ya da paylaşım menüsüyle, sen seçtiğin yere gider. İçinde olay dökümü, oyun ekranından küçük kareler, okunan ve çevrilen yazılar, cihaz modeli, iOS ve uygulama sürümü bulunur; şifre, hesap ve anahtar bulunmaz. E-postayla gönderirsen gönderen e-posta adresin alıcıya görünür. Kayıtlar yalnız sorunu çözmek için kullanılır ve üçüncü kişilerle paylaşılmaz. Gönderdiğin kaydın silinmesini istersen <a href="mailto:subvo2026@gmail.com">subvo2026@gmail.com</a> adresine yaz.</p>
+<p><strong>Satın almalar.</strong> Gönüllü destek (abonelik ve tek seferlik satın alma) Apple üzerinden yapılır. Ödeme bilgini Apple işler; Subvo görmez. Subvo yalnız satın alma durumunu (destekçi mi) Apple'ın verdiği bilgiyle telefonda kullanır. Satın almalar yalnız süs içindir (rozet, tema, uygulama simgesi).</p>
+<p><strong>Çocuklar.</strong> Subvo çocuklara yönelik değildir ve kimseden kişisel veri toplamaz.</p>
+<p><strong>Veri saklama ve silme.</strong> Subvo geliştirici tarafında veri saklamadığı için silinecek bir hesabın ya da kaydın yoktur. Telefondaki bilgiler uygulama içinden (hesabı değiştirme, konsolu ve TV'yi unutma, anahtarları silme, geçmişi temizleme) kaldırılır; uygulamayı silmek Anahtar Zinciri kayıtlarını silmeyebilir (yukarıya bak). Üçüncü taraf hizmetlere (DeepL, Gemini) gönderilen metin için o hizmetlerin kuralları geçerlidir.</p>
+<p><strong>Bağlantısızlık.</strong> Subvo, Sony Interactive Entertainment ile bağlantılı değildir ve onun tarafından onaylanmamıştır. PlayStation ve PS5, Sony Interactive Entertainment Inc.'in ticari markalarıdır.</p>
+<p><strong>Değişiklikler.</strong> Bu politika değişirse yeni tarihle yayımlanır.</p>
+<p><strong>İletişim.</strong> <a href="mailto:subvo2026@gmail.com">subvo2026@gmail.com</a></p>
+<footer>Subvo, Sony Interactive Entertainment ile bağlantılı değildir ve onun tarafından onaylanmamıştır. PlayStation ve PS5, Sony Interactive Entertainment Inc.'in ticari markalarıdır.</footer>
+</main></body></html>

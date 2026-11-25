@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Subvo – O texto do jogo, na TV, no seu idioma</title>
+<meta name="description" content="O Subvo lê no iPhone o texto do seu jogo de PS5, traduz e mostra a tradução por cima do jogo na sua TV. Grátis, sem anúncios e de código aberto.">
+<link rel="canonical" href="https://simonpetrus.github.io/subvo/pt-br/">
+<link rel="alternate" hreflang="tr" href="https://simonpetrus.github.io/subvo/">
+<link rel="alternate" hreflang="en" href="https://simonpetrus.github.io/subvo/en/">
+<link rel="alternate" hreflang="de" href="https://simonpetrus.github.io/subvo/de/">
+<link rel="alternate" hreflang="fr" href="https://simonpetrus.github.io/subvo/fr/">
+<link rel="alternate" hreflang="es" href="https://simonpetrus.github.io/subvo/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://simonpetrus.github.io/subvo/pt-br/">
+<link rel="alternate" hreflang="ru" href="https://simonpetrus.github.io/subvo/ru/">
+<link rel="alternate" hreflang="ar" href="https://simonpetrus.github.io/subvo/ar/">
+<link rel="alternate" hreflang="x-default" href="https://simonpetrus.github.io/subvo/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Subvo">
+<meta property="og:title" content="Subvo – O texto do jogo, na TV, no seu idioma">
+<meta property="og:description" content="O Subvo lê no iPhone o texto do seu jogo de PS5, traduz e mostra a tradução por cima do jogo na sua TV. Grátis, sem anúncios e de código aberto.">
+<meta property="og:url" content="https://simonpetrus.github.io/subvo/pt-br/">
+<meta property="og:image" content="https://simonpetrus.github.io/subvo/gorsel/pt-br/01-konusma.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#140b1f">
+<link rel="icon" type="image/png" href="../gorsel/simge.png">
+<link rel="apple-touch-icon" href="../gorsel/simge.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Düzen: gece sahnesi gibi koyu mor zemin; dar okuma sütunu, görseller telefon çerçevesinde yan yana, dar ekranda alt alta. Tek bilinçli koyu görünüm. */
+:root{
+  --gece:#140b1f;
+  --gece-2:#1e1230;
+  --cizgi:#3a2652;
+  --yazi:#f4eefa;
+  --soluk:#b9a8cc;
+  --pembe:#ff5fb7;
+  --sari:#ffd23f;
+  --f-baslik:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --f-govde:"Figtree", -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--gece);color:var(--yazi);font:17px/1.6 var(--f-govde);
+  padding-block:0 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.kap{max-width:1080px;margin:0 auto}
+a{color:var(--pembe)}
+a:focus-visible,.dugme:focus-visible{outline:2px solid var(--sari);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-baslik);text-wrap:balance;margin:0}
+h2{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.01em}
+h3{font-size:19px;font-weight:600}
+p{margin:0}
+.etiket{font:600 12px/1 var(--f-govde);letter-spacing:.12em;text-transform:uppercase;color:var(--soluk)}
+
+/* Dil seçici ve destek bağlantısı: sağ üstte, sade */
+.ust-bar{display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:6px 16px;
+  padding-top:calc(env(safe-area-inset-top,0px) + 16px);font-size:13px;font-weight:600;letter-spacing:.06em}
+.ust-bar a{color:var(--soluk);text-decoration:none}
+.ust-bar a:hover{color:var(--yazi)}
+.ust-bar .destek-bag{color:var(--yazi);letter-spacing:0}
+.diller{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0;padding:0;list-style:none}
+.diller a[aria-current="page"]{color:var(--yazi);text-decoration:underline;text-decoration-color:var(--pembe);text-underline-offset:4px}
+
+/* Üst */
+.ust{padding-top:40px;padding-bottom:24px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.marka{display:flex;align-items:center;gap:14px}
+.marka img{width:64px;height:64px;border-radius:15px}
+.marka span{font:800 28px/1 var(--f-baslik)}
+.ust h1{font-size:clamp(38px,6.2vw,66px);font-weight:800;line-height:1.02;letter-spacing:-.02em;margin:26px 0 18px}
+.ust h1 em{font-style:normal;color:var(--pembe)}
+.ust .giris{color:var(--soluk);max-width:46ch;font-size:19px}
+.dugmeler{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.dugme{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:600;font-size:16px}
+.dugme.ana{background:var(--yazi);color:var(--gece)}
+.dugme.ikinci{border:1px solid var(--cizgi);color:var(--yazi)}
+.dugme svg{width:20px;height:20px;fill:currentColor}
+.not{margin-top:14px;font-size:14px;color:var(--soluk)}
+.ust-gorsel{justify-self:center;width:min(340px,100%)}
+
+/* Telefon çerçevesi */
+.cerceve{border-radius:28px;overflow:hidden;border:1px solid var(--cizgi);background:var(--gece-2);box-shadow:0 30px 60px -30px rgba(255,95,183,.35)}
+.cerceve img{display:block;width:100%;height:auto}
+
+section{margin-top:96px}
+.bolum-bas{display:grid;gap:10px;max-width:62ch;margin-bottom:32px}
+.bolum-bas p{color:var(--soluk)}
+
+.ozellikler{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.ozellik{display:grid;gap:14px;align-content:start}
+.ozellik p{color:var(--soluk);font-size:16px}
+
+/* Akış: gerçek sıra olduğu için numaralı */
+.akis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--cizgi);border-radius:18px;overflow:hidden}
+.adim{padding:26px 24px;display:grid;gap:8px;align-content:start;min-width:0}
+.adim+.adim{border-inline-start:1px solid var(--cizgi)}
+.adim .no{font:800 15px/1 var(--f-baslik);color:var(--pembe)}
+.adim p{color:var(--soluk);font-size:16px}
+
+/* Altyazı örneği: oyundaki iki satır ve Subvo'nun TV'deki çıktısı */
+.ornek{margin-top:24px;background:var(--gece-2);border-radius:18px;padding:22px 24px;display:grid;gap:14px}
+.ornek .ing{font-size:15px;color:var(--soluk)}
+.ornek .tr{font:600 20px/1.45 var(--f-govde)}
+.ornek .ad{color:var(--sari)}
+
+.paketler{display:flex;flex-wrap:wrap;gap:10px}
+.paket{border:1px solid var(--cizgi);border-radius:999px;padding:8px 14px;font-size:15px}
+.paket b{color:var(--pembe);font-weight:600}
+
+.iki{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.liste{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.liste li{padding-inline-start:22px;position:relative;color:var(--soluk)}
+.liste li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--pembe)}
+.liste li strong{color:var(--yazi);font-weight:600}
+
+.ekranlar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:820px}
+
+.acik{background:var(--gece-2);border:1px solid var(--cizgi);border-radius:18px;padding:28px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.acik div{max-width:60ch;display:grid;gap:8px}
+.acik p{color:var(--soluk)}
+
+#destek{scroll-margin-top:24px}
+.bolum-bas p a,.liste a{overflow-wrap:anywhere}
+
+footer{margin-top:96px;padding-top:28px;border-top:1px solid var(--cizgi);display:grid;gap:14px;font-size:14px;color:var(--soluk)}
+footer .baglar{display:flex;flex-wrap:wrap;gap:18px}
+footer .eposta{user-select:all;color:var(--yazi)}
+
+@media (max-width:760px){
+  .ust{grid-template-columns:1fr;padding-top:28px}
+  .ust-gorsel{width:min(300px,100%)}
+  .ozellikler,.ekranlar{grid-template-columns:1fr;max-width:380px}
+  .akis{grid-template-columns:1fr}
+  .adim+.adim{border-inline-start:0;border-top:1px solid var(--cizgi)}
+  .iki{grid-template-columns:1fr}
+  section{margin-top:72px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .ust-gorsel .cerceve{animation:suz 900ms ease-out both}
+  @keyframes suz{from{transform:translateY(14px)}to{transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="kap">
+  <nav class="ust-bar" aria-label="Idioma">
+    <a class="destek-bag" href="#destek">Suporte</a>
+    <ul class="diller">
+      <li><a href="../" lang="tr" hreflang="tr" title="Türkçe" aria-label="Türkçe">TR</a></li>
+      <li><a href="../en/" lang="en" hreflang="en" title="English" aria-label="English">EN</a></li>
+      <li><a href="../de/" lang="de" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a></li>
+      <li><a href="../fr/" lang="fr" hreflang="fr" title="Français" aria-label="Français">FR</a></li>
+      <li><a href="../es/" lang="es" hreflang="es" title="Español" aria-label="Español">ES</a></li>
+      <li><a href="../pt-br/" lang="pt-BR" hreflang="pt-BR" title="Português (Brasil)" aria-label="Português (Brasil)" aria-current="page">PT</a></li>
+      <li><a href="../ru/" lang="ru" hreflang="ru" title="Русский" aria-label="Русский">RU</a></li>
+      <li><a href="../ar/" lang="ar" hreflang="ar" title="العربية" aria-label="العربية">AR</a></li>
+    </ul>
+  </nav>
+  <header class="ust">
+    <div>
+      <div class="marka"><img src="../gorsel/simge.png" alt="Ícone do Subvo"><span>Subvo</span></div>
+      <h1>O texto do jogo, na TV, <em>no seu idioma</em>.</h1>
+      <p class="giris">O Subvo lê no iPhone o texto do seu jogo de PS5, traduz e mostra a tradução na TV, logo por cima do jogo. Você não precisa largar o controle.</p>
+      <div class="dugmeler">
+        <a class="dugme ana" href="https://apps.apple.com/app/id6838672833">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.4-.9-2.4-3.8zM14.2 5.8c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>
+          Baixar na App Store
+        </a>
+        <a class="dugme ikinci" href="https://github.com/SimonPetrus/subvo">Código-fonte</a>
+      </div>
+      <p class="not">Grátis e sem anúncios. iPhone, PlayStation 5 e TV Samsung ou LG.</p>
+    </div>
+    <div class="ust-gorsel"><div class="cerceve"><img src="../gorsel/pt-br/01-konusma.jpg" width="414" height="900" alt="Legendas traduzidas por cima do jogo: falas de dois personagens com o nome em amarelo e a tradução em português"></div></div>
+  </header>
+
+  <section aria-labelledby="ne">
+    <div class="bolum-bas">
+      <span class="etiket">O que traduz</span>
+      <h2 id="ne">Não só legendas</h2>
+      <p>Além dos diálogos, nos jogos compatíveis ele também traduz as mensagens do celular do jogo, notícias, cartões de missão e as notificações que aparecem no canto.</p>
+    </div>
+    <div class="ozellikler">
+      <div class="ozellik">
+        <div class="cerceve"><img loading="lazy" src="../gorsel/pt-br/01-konusma.jpg" width="414" height="900" alt="Tradução das legendas de diálogo"></div>
+        <h3>Diálogos</h3>
+        <p>O nome de quem fala mantém a cor do jogo, e a tradução cobre a legenda original.</p>
+      </div>
+      <div class="ozellik">
+        <div class="cerceve"><img loading="lazy" src="../gorsel/pt-br/02-mesajlar.jpg" width="414" height="900" alt="Tradução das mensagens do celular do jogo"></div>
+        <h3>Mensagens do celular</h3>
+        <p>As conversas abertas no celular do jogo são traduzidas no próprio lugar dos balões de mensagem.</p>
+      </div>
+      <div class="ozellik">
+        <div class="cerceve"><img loading="lazy" src="../gorsel/pt-br/03-harita-bildirim.jpg" width="414" height="900" alt="Tradução de cartão de missão e notificação"></div>
+        <h3>Cartões e notificações</h3>
+        <p>Cartões de missão e de mapa, mensagens que entram pela lateral e dicas no canto também são traduzidos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="nasil">
+    <div class="bolum-bas">
+      <span class="etiket">Como funciona</span>
+      <h2 id="nasil">Do console à TV em três passos</h2>
+    </div>
+    <div class="akis">
+      <div class="adim"><span class="no">1</span><h3>O iPhone se conecta ao console</h3><p>Ao seu próprio PS5, por Remote Play. Você entra na sua conta Sony pela própria página da Sony; o Subvo nunca vê sua senha.</p></div>
+      <div class="adim"><span class="no">2</span><h3>Lê o texto e traduz</h3><p>A leitura acontece no próprio celular. A tradução usa a tradução no dispositivo da Apple ou, se preferir, sua própria chave do DeepL ou do Gemini.</p></div>
+      <div class="adim"><span class="no">3</span><h3>Mostra na TV</h3><p>A tradução aparece por cima do jogo no app Subvo TV, na mesma rede Wi-Fi. O celular ajuda você a instalar o app da TV.</p></div>
+    </div>
+    <div class="ornek" aria-label="Exemplo de tradução">
+      <span class="etiket">No jogo</span>
+      <p class="ing" lang="en">MAYA: The blue car has been following us for three blocks.<br>RICO: We'll lose them after the bridge.</p>
+      <span class="etiket">Na TV</span>
+      <p class="tr" lang="pt-BR"><span class="ad">MAYA:</span> O carro azul está nos seguindo há três quarteirões.<br><span class="ad">RICO:</span> Vamos despistá-los depois da ponte.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="paket">
+    <div class="bolum-bas">
+      <span class="etiket">Traduções prontas</span>
+      <h2 id="paket">Tradução sem espera</h2>
+      <p>Para alguns jogos, um pacote de tradução pronto (para o turco) é baixado automaticamente. As falas que estão no pacote aparecem na hora, sem internet. O pacote de Grand Theft Auto VI tem mais de 738 mil linhas e também existe em árabe.</p>
+    </div>
+    <div class="paketler">
+      <span class="paket"><b>Grand Theft Auto VI</b> · turco, árabe</span>
+      <span class="paket">Red Dead Redemption 2</span>
+      <span class="paket">Grand Theft Auto V</span>
+      <span class="paket">Elden Ring + Shadow of the Erdtree</span>
+      <span class="paket">Marvel's Spider-Man 2</span>
+      <span class="paket">Death Stranding 2</span>
+      <span class="paket">Death Stranding Director's Cut</span>
+      <span class="paket">Assassin's Creed Shadows</span>
+      <span class="paket">Mafia: The Old Country</span>
+      <span class="paket">Call of Duty: Modern Warfare (2019)</span>
+    </div>
+    <p class="not">Nos outros jogos e idiomas, quem traduz é o mecanismo que você escolher. São 12 idiomas de destino.</p>
+  </section>
+
+  <section aria-labelledby="gerek">
+    <div class="iki">
+      <div class="bolum-bas" style="margin:0">
+        <span class="etiket">Requisitos</span>
+        <h2 id="gerek">Antes de começar</h2>
+        <ul class="liste">
+          <li><strong>Seu próprio PlayStation 5</strong> e sua conta PlayStation.</li>
+          <li>Uma smart TV <strong>Samsung (Tizen) ou LG (webOS)</strong>.</li>
+          <li>Celular, console e TV na <strong>mesma rede Wi-Fi</strong>.</li>
+          <li><strong>iOS 26</strong> para a tradução no dispositivo. Em versões anteriores do iOS, você precisa da sua própria chave do DeepL ou do Gemini.</li>
+        </ul>
+        <p class="not">Sem PS5? Experimente uma cena de exemplo em “Ver como funciona” no app.</p>
+      </div>
+      <div class="bolum-bas" style="margin:0">
+        <span class="etiket">Privacidade</span>
+        <h2>Seus dados ficam com você</h2>
+        <ul class="liste">
+          <li>O Subvo <strong>não tem servidores</strong>; nenhum dado vai para o desenvolvedor.</li>
+          <li><strong>Sem anúncios, análises ou rastreamento.</strong></li>
+          <li>Seu login do PlayStation e a chave de pareamento ficam apenas no Chaveiro do celular.</li>
+          <li>A tradução é grátis e totalmente liberada. Se quiser apoiar o app, em troca você só desbloqueia selo, temas e ícones.</li>
+        </ul>
+        <p class="not"><a href="../privacy/">Política de privacidade (em inglês)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="uyg">
+    <div class="bolum-bas">
+      <span class="etiket">O app</span>
+      <h2 id="uyg">Você escolhe a aparência</h2>
+      <p>Tamanho do texto, cor, fundo e posição mudam nos Ajustes. O app está disponível em sete idiomas.</p>
+    </div>
+    <div class="ekranlar">
+      <div class="cerceve"><img loading="lazy" src="../gorsel/pt-br/04-ana-ekran.jpg" width="414" height="900" alt="Tela inicial do Subvo"></div>
+      <div class="cerceve"><img loading="lazy" src="../gorsel/pt-br/05-ceviri-ayarlari.jpg" width="414" height="900" alt="Tela de ajustes de tradução"></div>
+      <div class="cerceve"><img loading="lazy" src="../gorsel/pt-br/08-gorunum.jpg" width="414" height="900" alt="Tela de ajustes de aparência"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="kaynak">
+    <div class="acik">
+      <div>
+        <span class="etiket">Código aberto</span>
+        <h2 id="kaynak">Qualquer pessoa pode ver o código</h2>
+        <p>O Subvo é um app de código aberto sob a licença AGPL-3.0. O código-fonte e as informações de licença estão no GitHub.</p>
+      </div>
+      <a class="dugme ikinci" href="https://github.com/SimonPetrus/subvo">Abrir no GitHub</a>
+    </div>
+  </section>
+
+  <section id="destek" aria-labelledby="destek-b">
+    <div class="iki">
+      <div class="bolum-bas" style="margin:0">
+        <span class="etiket">Suporte</span>
+        <h2 id="destek-b">Dúvidas ou problemas?</h2>
+        <p>Para dúvidas, problemas ou sugestões: <a href="mailto:subvo2026@gmail.com">subvo2026@gmail.com</a></p>
+        <p>Anexar uma gravação de Ajustes › Avançado › “Relatar um problema” facilita a correção. Informe também o modelo do celular, a versão do iOS e a marca da TV.</p>
+        <p class="not"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Termos de uso (contrato padrão da Apple)</a></p>
+      </div>
+      <div class="bolum-bas" style="margin:0">
+        <span class="etiket">Perguntas frequentes</span>
+        <ul class="liste">
+          <li><strong>Do que eu preciso?</strong> Um iPhone (iOS 16 ou posterior), um PS5 e uma smart TV na mesma rede Wi-Fi.</li>
+          <li><strong>Como a tradução é feita?</strong> Alguns jogos têm um pacote de tradução pronto. Nos outros, é usada a tradução no dispositivo da Apple (iOS 26 ou posterior) ou sua própria chave do DeepL ou do Gemini.</li>
+          <li><strong>Para onde vão meus dados?</strong> Nenhum dado é enviado ao desenvolvedor. Veja os detalhes na <a href="../privacy/">política de privacidade</a> (em inglês).</li>
+          <li><strong>Como gerencio uma assinatura?</strong> No iPhone: Ajustes › Conta Apple › Assinaturas. As compras de apoio são voluntárias; todos os recursos do app são grátis.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="baglar">
+      <span>Suporte: <span class="eposta">subvo2026@gmail.com</span></span>
+      <a href="../privacy/">Privacidade</a>
+      <a href="https://github.com/SimonPetrus/subvo">GitHub</a>
+    </div>
+    <p>O Subvo não é afiliado à Sony Interactive Entertainment nem endossado por ela, e não é um app oficial. PlayStation e PS5 são marcas da Sony Interactive Entertainment Inc. Samsung e LG são marcas de seus respectivos proprietários. Os nomes de jogos são citados apenas para indicar compatibilidade; todas as marcas pertencem aos seus proprietários. As cenas das imagens são exemplos desenhados pelo próprio app.</p>
+  </footer>
+</div>
+</body>
+</html>

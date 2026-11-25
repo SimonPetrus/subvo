@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Subvo — текст из игры на телевизоре, на вашем языке</title>
+<meta name="description" content="Subvo читает на iPhone текст из вашей игры на PS5, переводит его и показывает перевод поверх игры на телевизоре. Бесплатно, без рекламы, с открытым исходным кодом.">
+<link rel="canonical" href="https://simonpetrus.github.io/subvo/ru/">
+<link rel="alternate" hreflang="tr" href="https://simonpetrus.github.io/subvo/">
+<link rel="alternate" hreflang="en" href="https://simonpetrus.github.io/subvo/en/">
+<link rel="alternate" hreflang="de" href="https://simonpetrus.github.io/subvo/de/">
+<link rel="alternate" hreflang="fr" href="https://simonpetrus.github.io/subvo/fr/">
+<link rel="alternate" hreflang="es" href="https://simonpetrus.github.io/subvo/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://simonpetrus.github.io/subvo/pt-br/">
+<link rel="alternate" hreflang="ru" href="https://simonpetrus.github.io/subvo/ru/">
+<link rel="alternate" hreflang="ar" href="https://simonpetrus.github.io/subvo/ar/">
+<link rel="alternate" hreflang="x-default" href="https://simonpetrus.github.io/subvo/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Subvo">
+<meta property="og:title" content="Subvo — текст из игры на телевизоре, на вашем языке">
+<meta property="og:description" content="Subvo читает на iPhone текст из вашей игры на PS5, переводит его и показывает перевод поверх игры на телевизоре. Бесплатно, без рекламы, с открытым исходным кодом.">
+<meta property="og:url" content="https://simonpetrus.github.io/subvo/ru/">
+<meta property="og:image" content="https://simonpetrus.github.io/subvo/gorsel/ru/01-konusma.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#140b1f">
+<link rel="icon" type="image/png" href="../gorsel/simge.png">
+<link rel="apple-touch-icon" href="../gorsel/simge.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap">
+<style>
+/* Düzen: gece sahnesi gibi koyu mor zemin; dar okuma sütunu, görseller telefon çerçevesinde yan yana, dar ekranda alt alta. Tek bilinçli koyu görünüm. */
+:root{
+  --gece:#140b1f;
+  --gece-2:#1e1230;
+  --cizgi:#3a2652;
+  --yazi:#f4eefa;
+  --soluk:#b9a8cc;
+  --pembe:#ff5fb7;
+  --sari:#ffd23f;
+  --f-baslik:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --f-govde:"Figtree", -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--gece);color:var(--yazi);font:17px/1.6 var(--f-govde);
+  padding-block:0 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.kap{max-width:1080px;margin:0 auto}
+a{color:var(--pembe)}
+a:focus-visible,.dugme:focus-visible{outline:2px solid var(--sari);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-baslik);text-wrap:balance;margin:0}
+h2{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.01em}
+h3{font-size:19px;font-weight:600}
+p{margin:0}
+.etiket{font:600 12px/1 var(--f-govde);letter-spacing:.12em;text-transform:uppercase;color:var(--soluk)}
+
+/* Dil seçici ve destek bağlantısı: sağ üstte, sade */
+.ust-bar{display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:6px 16px;
+  padding-top:calc(env(safe-area-inset-top,0px) + 16px);font-size:13px;font-weight:600;letter-spacing:.06em}
+.ust-bar a{color:var(--soluk);text-decoration:none}
+.ust-bar a:hover{color:var(--yazi)}
+.ust-bar .destek-bag{color:var(--yazi);letter-spacing:0}
+.diller{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0;padding:0;list-style:none}
+.diller a[aria-current="page"]{color:var(--yazi);text-decoration:underline;text-decoration-color:var(--pembe);text-underline-offset:4px}
+
+/* Üst */
+.ust{padding-top:40px;padding-bottom:24px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.marka{display:flex;align-items:center;gap:14px}
+.marka img{width:64px;height:64px;border-radius:15px}
+.marka span{font:800 28px/1 var(--f-baslik)}
+.ust h1{font-size:clamp(38px,6.2vw,66px);font-weight:800;line-height:1.02;letter-spacing:-.02em;margin:26px 0 18px}
+.ust h1 em{font-style:normal;color:var(--pembe)}
+.ust .giris{color:var(--soluk);max-width:46ch;font-size:19px}
+.dugmeler{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.dugme{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:600;font-size:16px}
+.dugme.ana{background:var(--yazi);color:var(--gece)}
+.dugme.ikinci{border:1px solid var(--cizgi);color:var(--yazi)}
+.dugme svg{width:20px;height:20px;fill:currentColor}
+.not{margin-top:14px;font-size:14px;color:var(--soluk)}
+.ust-gorsel{justify-self:center;width:min(340px,100%)}
+
+/* Telefon çerçevesi */
+.cerceve{border-radius:28px;overflow:hidden;border:1px solid var(--cizgi);background:var(--gece-2);box-shadow:0 30px 60px -30px rgba(255,95,183,.35)}
+.cerceve img{display:block;width:100%;height:auto}
+
+section{margin-top:96px}
+.bolum-bas{display:grid;gap:10px;max-width:62ch;margin-bottom:32px}
+.bolum-bas p{color:var(--soluk)}
+
+.ozellikler{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.ozellik{display:grid;gap:14px;align-content:start}
+.ozellik p{color:var(--soluk);font-size:16px}
+
+/* Akış: gerçek sıra olduğu için numaralı */
+.akis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--cizgi);border-radius:18px;overflow:hidden}
+.adim{padding:26px 24px;display:grid;gap:8px;align-content:start;min-width:0}
+.adim+.adim{border-inline-start:1px solid var(--cizgi)}
+.adim .no{font:800 15px/1 var(--f-baslik);color:var(--pembe)}
+.adim p{color:var(--soluk);font-size:16px}
+
+/* Altyazı örneği: oyundaki iki satır ve Subvo'nun TV'deki çıktısı */
+.ornek{margin-top:24px;background:var(--gece-2);border-radius:18px;padding:22px 24px;display:grid;gap:14px}
+.ornek .ing{font-size:15px;color:var(--soluk)}
+.ornek .tr{font:600 20px/1.45 var(--f-govde)}
+.ornek .ad{color:var(--sari)}
+
+.paketler{display:flex;flex-wrap:wrap;gap:10px}
+.paket{border:1px solid var(--cizgi);border-radius:999px;padding:8px 14px;font-size:15px}
+.paket b{color:var(--pembe);font-weight:600}
+
+.iki{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.liste{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.liste li{padding-inline-start:22px;position:relative;color:var(--soluk)}
+.liste li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--pembe)}
+.liste li strong{color:var(--yazi);font-weight:600}
+
+.ekranlar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:820px}
+
+.acik{background:var(--gece-2);border:1px solid var(--cizgi);border-radius:18px;padding:28px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.acik div{max-width:60ch;display:grid;gap:8px}
+.acik p{color:var(--soluk)}
+
+#destek{scroll-margin-top:24px}
+.bolum-bas p a,.liste a{overflow-wrap:anywhere}
+
+footer{margin-top:96px;padding-top:28px;border-top:1px solid var(--cizgi);display:grid;gap:14px;font-size:14px;color:var(--soluk)}
+footer .baglar{display:flex;flex-wrap:wrap;gap:18px}
+footer .eposta{user-select:all;color:var(--yazi)}
+
+@media (max-width:760px){
+  .ust{grid-template-columns:1fr;padding-top:28px}
+  .ust-gorsel{width:min(300px,100%)}
+  .ozellikler,.ekranlar{grid-template-columns:1fr;max-width:380px}
+  .akis{grid-template-columns:1fr}
+  .adim+.adim{border-inline-start:0;border-top:1px solid var(--cizgi)}
+  .iki{grid-template-columns:1fr}
+  section{margin-top:72px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .ust-gorsel .cerceve{animation:suz 900ms ease-out both}
+  @keyframes suz{from{transform:translateY(14px)}to{transform:none}}
+}
+:root{--f-baslik:"Bricolage Grotesque", "Manrope", "Avenir Next", system-ui, sans-serif;
+  --f-govde:"Figtree", "Manrope", -apple-system, "Segoe UI", sans-serif}</style>
+</head>
+<body>
+<div class="kap">
+  <nav class="ust-bar" aria-label="Язык">
+    <a class="destek-bag" href="#destek">Поддержка</a>
+    <ul class="diller">
+      <li><a href="../" lang="tr" hreflang="tr" title="Türkçe" aria-label="Türkçe">TR</a></li>
+      <li><a href="../en/" lang="en" hreflang="en" title="English" aria-label="English">EN</a></li>
+      <li><a href="../de/" lang="de" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a></li>
+      <li><a href="../fr/" lang="fr" hreflang="fr" title="Français" aria-label="Français">FR</a></li>
+      <li><a href="../es/" lang="es" hreflang="es" title="Español" aria-label="Español">ES</a></li>
+      <li><a href="../pt-br/" lang="pt-BR" hreflang="pt-BR" title="Português (Brasil)" aria-label="Português (Brasil)">PT</a></li>
+      <li><a href="../ru/" lang="ru" hreflang="ru" title="Русский" aria-label="Русский" aria-current="page">RU</a></li>
+      <li><a href="../ar/" lang="ar" hreflang="ar" title="العربية" aria-label="العربية">AR</a></li>
+    </ul>
+  </nav>
+  <header class="ust">
+    <div>
+      <div class="marka"><img src="../gorsel/simge.png" alt="Значок Subvo"><span>Subvo</span></div>
+      <h1>Текст из игры — на телевизоре <em>на вашем языке</em>.</h1>
+      <p class="giris">Subvo читает на iPhone текст из вашей игры на PS5, переводит его и показывает перевод на телевизоре прямо поверх игры. Геймпад откладывать не нужно.</p>
+      <div class="dugmeler">
+        <a class="dugme ana" href="https://apps.apple.com/app/id6838672833">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.4-.9-2.4-3.8zM14.2 5.8c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>
+          Загрузить в App Store
+        </a>
+        <a class="dugme ikinci" href="https://github.com/SimonPetrus/subvo">Исходный код</a>
+      </div>
+      <p class="not">Бесплатно и без рекламы. iPhone, PlayStation 5 и телевизор Samsung или LG.</p>
+    </div>
+    <div class="ust-gorsel"><div class="cerceve"><img src="../gorsel/ru/01-konusma.jpg" width="414" height="900" alt="Переведённые субтитры поверх игры: реплики двух персонажей, имена жёлтым цветом и перевод на русский"></div></div>
+  </header>
+
+  <section aria-labelledby="ne">
+    <div class="bolum-bas">
+      <span class="etiket">Что переводит</span>
+      <h2 id="ne">Не только субтитры</h2>
+      <p>Кроме диалогов, в поддерживаемых играх Subvo переводит сообщения на игровом телефоне, новости, карточки заданий и уведомления, которые появляются в углу экрана.</p>
+    </div>
+    <div class="ozellikler">
+      <div class="ozellik">
+        <div class="cerceve"><img loading="lazy" src="../gorsel/ru/01-konusma.jpg" width="414" height="900" alt="Перевод субтитров диалога"></div>
+        <h3>Диалоги</h3>
+        <p>Имя говорящего сохраняет цвет из игры, а перевод закрывает собственные субтитры игры.</p>
+      </div>
+      <div class="ozellik">
+        <div class="cerceve"><img loading="lazy" src="../gorsel/ru/02-mesajlar.jpg" width="414" height="900" alt="Перевод сообщений на игровом телефоне"></div>
+        <h3>Сообщения на телефоне</h3>
+        <p>Переписка на игровом телефоне переводится прямо на месте облачков сообщений.</p>
+      </div>
+      <div class="ozellik">
+        <div class="cerceve"><img loading="lazy" src="../gorsel/ru/03-harita-bildirim.jpg" width="414" height="900" alt="Перевод карточки задания и уведомления"></div>
+        <h3>Карточки и уведомления</h3>
+        <p>Карточки заданий и карты, всплывающие сбоку сообщения и подсказки в углу тоже переводятся.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="nasil">
+    <div class="bolum-bas">
+      <span class="etiket">Как это работает</span>
+      <h2 id="nasil">От консоли до телевизора за три шага</h2>
+    </div>
+    <div class="akis">
+      <div class="adim"><span class="no">1</span><h3>iPhone подключается к консоли</h3><p>К вашей собственной PS5 через Remote Play. Вы входите в учётную запись Sony на странице самой Sony; Subvo никогда не видит ваш пароль.</p></div>
+      <div class="adim"><span class="no">2</span><h3>Читает текст и переводит</h3><p>Текст распознаётся на самом телефоне. Переводит встроенный переводчик Apple на устройстве или, если хотите, ваш собственный ключ DeepL или Gemini.</p></div>
+      <div class="adim"><span class="no">3</span><h3>Показывает на телевизоре</h3><p>Перевод появляется поверх игры в приложении Subvo TV в той же сети Wi-Fi. Установить приложение на телевизор поможет телефон.</p></div>
+    </div>
+    <div class="ornek" aria-label="Пример перевода">
+      <span class="etiket">В игре</span>
+      <p class="ing" lang="en">MAYA: The blue car has been following us for three blocks.<br>RICO: We'll lose them after the bridge.</p>
+      <span class="etiket">На телевизоре</span>
+      <p class="tr" lang="ru"><span class="ad">MAYA:</span> Синяя машина едет за нами уже три квартала.<br><span class="ad">RICO:</span> Оторвёмся от них после моста.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="paket">
+    <div class="bolum-bas">
+      <span class="etiket">Готовые переводы</span>
+      <h2 id="paket">Перевод без ожидания</h2>
+      <p>Для некоторых игр готовый пакет перевода (на турецкий) скачивается сам. Строки из пакета появляются мгновенно и без интернета. В пакете для Grand Theft Auto VI больше 738 тысяч строк, есть и арабская версия.</p>
+    </div>
+    <div class="paketler">
+      <span class="paket"><b>Grand Theft Auto VI</b> · турецкий, арабский</span>
+      <span class="paket">Red Dead Redemption 2</span>
+      <span class="paket">Grand Theft Auto V</span>
+      <span class="paket">Elden Ring + Shadow of the Erdtree</span>
+      <span class="paket">Marvel's Spider-Man 2</span>
+      <span class="paket">Death Stranding 2</span>
+      <span class="paket">Death Stranding Director's Cut</span>
+      <span class="paket">Assassin's Creed Shadows</span>
+      <span class="paket">Mafia: The Old Country</span>
+      <span class="paket">Call of Duty: Modern Warfare (2019)</span>
+    </div>
+    <p class="not">В остальных играх и на остальные языки переводит выбранный вами движок. Всего языков перевода — 12.</p>
+  </section>
+
+  <section aria-labelledby="gerek">
+    <div class="iki">
+      <div class="bolum-bas" style="margin:0">
+        <span class="etiket">Что нужно</span>
+        <h2 id="gerek">Перед началом</h2>
+        <ul class="liste">
+          <li><strong>Ваша собственная PlayStation 5</strong> и учётная запись PlayStation.</li>
+          <li>Смарт-телевизор <strong>Samsung (Tizen) или LG (webOS)</strong>.</li>
+          <li>Телефон, консоль и телевизор в <strong>одной сети Wi-Fi</strong>.</li>
+          <li><strong>iOS 26</strong> для перевода на устройстве. На более старых версиях iOS нужен свой ключ DeepL или Gemini.</li>
+        </ul>
+        <p class="not">Нет PS5? Попробуйте пример сцены через «Как это работает» в приложении.</p>
+      </div>
+      <div class="bolum-bas" style="margin:0">
+        <span class="etiket">Конфиденциальность</span>
+        <h2>Ваши данные остаются у вас</h2>
+        <ul class="liste">
+          <li>У Subvo <strong>нет серверов</strong>; разработчику данные не передаются.</li>
+          <li><strong>Нет рекламы, аналитики и отслеживания.</strong></li>
+          <li>Данные входа в PlayStation и ключ сопряжения хранятся только в связке ключей телефона.</li>
+          <li>Перевод бесплатный и полностью открыт. Если захотите поддержать приложение, взамен откроются только значок, темы и иконки.</li>
+        </ul>
+        <p class="not"><a href="../privacy/">Политика конфиденциальности (на английском)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="uyg">
+    <div class="bolum-bas">
+      <span class="etiket">Приложение</span>
+      <h2 id="uyg">Внешний вид выбираете вы</h2>
+      <p>Размер текста, цвет, фон и расположение меняются в настройках. Приложение доступно на семи языках.</p>
+    </div>
+    <div class="ekranlar">
+      <div class="cerceve"><img loading="lazy" src="../gorsel/ru/04-ana-ekran.jpg" width="414" height="900" alt="Главный экран Subvo"></div>
+      <div class="cerceve"><img loading="lazy" src="../gorsel/ru/05-ceviri-ayarlari.jpg" width="414" height="900" alt="Экран настроек перевода"></div>
+      <div class="cerceve"><img loading="lazy" src="../gorsel/ru/08-gorunum.jpg" width="414" height="900" alt="Экран настроек внешнего вида"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="kaynak">
+    <div class="acik">
+      <div>
+        <span class="etiket">Открытый код</span>
+        <h2 id="kaynak">Код может посмотреть каждый</h2>
+        <p>Subvo — приложение с открытым исходным кодом под лицензией AGPL-3.0. Исходный код и сведения о лицензии — на GitHub.</p>
+      </div>
+      <a class="dugme ikinci" href="https://github.com/SimonPetrus/subvo">Открыть на GitHub</a>
+    </div>
+  </section>
+
+  <section id="destek" aria-labelledby="destek-b">
+    <div class="iki">
+      <div class="bolum-bas" style="margin:0">
+        <span class="etiket">Поддержка</span>
+        <h2 id="destek-b">Есть вопрос или проблема?</h2>
+        <p>Вопросы, проблемы и предложения: <a href="mailto:subvo2026@gmail.com">subvo2026@gmail.com</a></p>
+        <p>Чтобы проблему было проще исправить, приложите запись из раздела Настройки › Расширенные › «Сообщить о проблеме». Укажите также модель телефона, версию iOS и марку телевизора.</p>
+        <p class="not"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Условия использования (стандартное соглашение Apple)</a></p>
+      </div>
+      <div class="bolum-bas" style="margin:0">
+        <span class="etiket">Частые вопросы</span>
+        <ul class="liste">
+          <li><strong>Что нужно?</strong> iPhone (iOS 16 или новее), PS5 и смарт-телевизор в одной сети Wi-Fi.</li>
+          <li><strong>Как выполняется перевод?</strong> Для некоторых игр есть готовый пакет перевода. В остальных случаях используется перевод Apple на устройстве (iOS 26 или новее) или ваш собственный ключ DeepL или Gemini.</li>
+          <li><strong>Куда уходят мои данные?</strong> Разработчику никакие данные не отправляются. Подробнее — в <a href="../privacy/">политике конфиденциальности</a> (на английском).</li>
+          <li><strong>Как управлять подпиской?</strong> На iPhone: «Настройки» › «Учётная запись Apple» › «Подписки». Покупки в поддержку добровольны; все функции приложения бесплатны.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="baglar">
+      <span>Поддержка: <span class="eposta">subvo2026@gmail.com</span></span>
+      <a href="../privacy/">Конфиденциальность</a>
+      <a href="https://github.com/SimonPetrus/subvo">GitHub</a>
+    </div>
+    <p>Subvo не связан с Sony Interactive Entertainment, не одобрен ею и не является официальным приложением. PlayStation и PS5 — товарные знаки Sony Interactive Entertainment Inc. Samsung и LG — товарные знаки их владельцев. Названия игр упоминаются только для указания совместимости; все товарные знаки принадлежат их владельцам. Сцены на изображениях — примеры, которые рисует само приложение.</p>
+  </footer>
+</div>
+</body>
+</html>
